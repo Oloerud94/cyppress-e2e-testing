@@ -62,7 +62,7 @@ describe("Inventory", () => {
     });
   });
 
-  it.only("Check single item page", () => {
+  it("Check single item page", () => {
     const item = inventoryItems[1];
     InventoryPage.getItemByName(item.name).click();
     cy.location("pathname").should("equal", "/inventory-item.html");
