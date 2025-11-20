@@ -27,7 +27,7 @@ jobs:
         run: echo "No build step needed"
 
       - name: Start application
-        run: npm start &
+        run: npm run start-18 &
       
       - name: Wait for app to be ready
         run: npx wait-on http://localhost:3000
