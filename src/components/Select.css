@@ -17,7 +17,9 @@
 .select_container:before {
   content: '';
   background: url('../assets/img/filter.png') no-repeat center center;
-  background: url('../assets/svg/filter3x.svg') no-repeat center center, linear-gradient(transparent, transparent);
+  background:
+    url('../assets/svg/filter3x.svg') no-repeat center center,
+    linear-gradient(transparent, transparent);
   height: 40px;
   width: 40px;
   position: absolute;
@@ -46,7 +48,9 @@
   .select_container:after {
     content: '';
     background: url('../assets/img/arrow.png') no-repeat center center;
-    background: url('../assets/svg/arrow3x.svg') no-repeat center center, linear-gradient(transparent, transparent);
+    background:
+      url('../assets/svg/arrow3x.svg') no-repeat center center,
+      linear-gradient(transparent, transparent);
     height: 40px;
     width: 40px;
     position: absolute;
