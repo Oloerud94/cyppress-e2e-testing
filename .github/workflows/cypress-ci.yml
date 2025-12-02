@@ -45,3 +45,10 @@ jobs:
         with:
           name: cypress-screenshots
           path: cypress/screenshots
+          
+      - name: Upload Mochawesome HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mochawesome-report
+          path: cypress/reports/html
