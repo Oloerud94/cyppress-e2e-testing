@@ -1,16 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import "./HeaderContainer.css";
-import DrawerMenu from "./DrawerMenu";
-import CartButton from "./CartButton";
+import React from 'react';
+import PropTypes from 'prop-types';
+import './HeaderContainer.css';
+import DrawerMenu from './DrawerMenu';
+import CartButton from './CartButton';
 
-const HeaderContainer = ({
-  customClass,
-  secondaryHeaderBot,
-  secondaryLeftComponent,
-  secondaryRightComponent,
-  secondaryTitle,
-}) => {
+const HeaderContainer = ({ customClass, secondaryHeaderBot, secondaryLeftComponent, secondaryRightComponent, secondaryTitle }) => {
   /**
    * @TODO:
    * This can't be tested yet because enzyme currently doesn't support ReactJS17,
@@ -28,9 +22,7 @@ const HeaderContainer = ({
    * and functions
    */
   /* istanbul ignore next */
-  const LeftComponent = ({ leftComponent }) => (
-    <div className="left_component">{React.cloneElement(leftComponent)}</div>
-  );
+  const LeftComponent = ({ leftComponent }) => <div className="left_component">{React.cloneElement(leftComponent)}</div>;
   /**
    * @TODO:
    * This can't be tested yet because enzyme currently doesn't support ReactJS17,
@@ -39,9 +31,7 @@ const HeaderContainer = ({
    * and functions
    */
   /* istanbul ignore next */
-  const RightComponent = ({ rightComponent }) => (
-    <div className="right_component">{React.cloneElement(rightComponent)}</div>
-  );
+  const RightComponent = ({ rightComponent }) => <div className="right_component">{React.cloneElement(rightComponent)}</div>;
   /**
    * @TODO:
    * This can't be tested yet because enzyme currently doesn't support ReactJS17,
@@ -51,7 +41,7 @@ const HeaderContainer = ({
    */
   /* istanbul ignore next */
   const Title = ({ title }) => <span className="title">{title}</span>;
-  const extraClass = customClass ? ` ${customClass}` : "";
+  const extraClass = customClass ? ` ${customClass}` : '';
 
   return (
     <div id="header_container" className={`header_container${extraClass}`}>
@@ -67,14 +57,10 @@ const HeaderContainer = ({
         </div>
       </div>
       <div className="header_secondary_container">
-        {secondaryLeftComponent && (
-          <LeftComponent leftComponent={secondaryLeftComponent} />
-        )}
+        {secondaryLeftComponent && <LeftComponent leftComponent={secondaryLeftComponent} />}
         {secondaryTitle && <Title title={secondaryTitle} />}
         {secondaryHeaderBot && <HeaderBot />}
-        {secondaryRightComponent && (
-          <RightComponent rightComponent={secondaryRightComponent} />
-        )}
+        {secondaryRightComponent && <RightComponent rightComponent={secondaryRightComponent} />}
       </div>
     </div>
   );

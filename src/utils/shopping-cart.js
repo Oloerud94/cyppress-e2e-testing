@@ -38,7 +38,7 @@ export class ShoppingCart {
 
   static getCartContents() {
     // pull out our current cart contents
-    let curContents = window.localStorage.getItem("cart-contents");
+    let curContents = window.localStorage.getItem('cart-contents');
 
     // Make an empty list if this is the first item
     if (curContents == null) {
@@ -52,7 +52,7 @@ export class ShoppingCart {
   }
 
   static setCartContents(newContents) {
-    window.localStorage.setItem("cart-contents", JSON.stringify(newContents));
+    window.localStorage.setItem('cart-contents', JSON.stringify(newContents));
 
     // Notify our listeners
     /* istanbul ignore next */
@@ -62,7 +62,7 @@ export class ShoppingCart {
   }
 
   static resetCart() {
-    window.localStorage.removeItem("cart-contents");
+    window.localStorage.removeItem('cart-contents');
 
     // Notify our listeners
     /* istanbul ignore next */

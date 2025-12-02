@@ -1,8 +1,8 @@
-import React from "react";
-import { Redirect, Route } from "react-router-dom";
-import PropTypes from "prop-types";
-import { isLoggedIn } from "../utils/Credentials";
-import { ROUTES } from "../utils/Constants";
+import React from 'react';
+import { Redirect, Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { isLoggedIn } from '../utils/Credentials';
+import { ROUTES } from '../utils/Constants';
 
 /**
  * @TODO: This can't be tested yet because enzyme currently doesn't support ReactJS17,
@@ -16,13 +16,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={(props) =>
-        isLoggedIn() ? (
-          <Component {...props} />
-        ) : (
-          <Redirect
-            to={{ pathname: ROUTES.LOGIN, state: { from: props.location } }}
-          />
-        )
+        isLoggedIn() ? <Component {...props} /> : <Redirect to={{ pathname: ROUTES.LOGIN, state: { from: props.location } }} />
       }
     />
   );

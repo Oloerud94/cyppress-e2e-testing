@@ -8,7 +8,7 @@ export const LoginPage = {
   },
 
   getLogin() {
-    return cy.get("[data-test=login-button]");
+    return cy.get('[data-test=login-button]');
   },
 
   getError() {
@@ -28,20 +28,23 @@ export const LoginPage = {
     //   cy.location('pathname').should('equal','/inventory.html')
     // },)
 
-    cy.session(`user ${username} login`, () => {
-      cy.log('**log in**')
-      cy.visit('/')
-      LoginPage.loginWith(username, password)
-      cy.location('pathname').should('equal','/inventory.html')
-    },
-    {
-      validate(){
-        cy.visit('/inventory.html')
-        cy.location('pathname').should('equal', '/inventory.html')
-      }
-    })
+    cy.session(
+      `user ${username} login`,
+      () => {
+        cy.log('**log in**');
+        cy.visit('/');
+        LoginPage.loginWith(username, password);
+        cy.location('pathname').should('equal', '/inventory.html');
+      },
+      {
+        validate() {
+          cy.visit('/inventory.html');
+          cy.location('pathname').should('equal', '/inventory.html');
+        },
+      },
+    );
   },
-  
+
   loginWithNoUsername(password) {
     LoginPage.getPassword().type(password);
     LoginPage.getLogin().click();

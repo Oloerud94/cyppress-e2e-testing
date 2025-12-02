@@ -1,43 +1,37 @@
-import React, { useEffect } from "react";
-import { withRouter } from "react-router-dom";
-import { useState } from "react";
-import "./Login.css";
-import {
-  isLockedOutUser,
-  setCredentials,
-  verifyCredentials,
-} from "../utils/Credentials";
-import { ROUTES } from "../utils/Constants";
-import InputError, { INPUT_TYPES } from "../components/InputError";
-import SubmitButton from "../components/SubmitButton";
-import ErrorMessage from "../components/ErrorMessage";
+import React, { useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
+import { useState } from 'react';
+import './Login.css';
+import { isLockedOutUser, setCredentials, verifyCredentials } from '../utils/Credentials';
+import { ROUTES } from '../utils/Constants';
+import InputError, { INPUT_TYPES } from '../components/InputError';
+import SubmitButton from '../components/SubmitButton';
+import ErrorMessage from '../components/ErrorMessage';
 
 function Login(props) {
   const { history, location } = props;
-  const [error, setError] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [error, setError] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   useEffect(() => {
     if (location.state) {
-      return setError(
-        `You can only access '${location.state.from.pathname}' when you are logged in.`
-      );
+      return setError(`You can only access '${location.state.from.pathname}' when you are logged in.`);
     }
   }, [location.state]);
 
   const dismissError = () => {
-    setError("");
+    setError('');
   };
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     if (!username) {
-      return setError("Username is required");
+      return setError('Username is required');
     }
 
     if (!password) {
-      return setError("Password is required");
+      return setError('Password is required');
     }
 
     if (verifyCredentials(username, password)) {
@@ -46,18 +40,16 @@ function Login(props) {
       setCredentials(username, password);
       // Catch our locked-out user and bail out
       if (isLockedOutUser()) {
-        return setError("Sorry, this user has been locked out.");
+        return setError('Sorry, this user has been locked out.');
       }
 
       // Redirect!
       history.push(ROUTES.INVENTORY);
     } else {
-      return setError(
-        "Username and password do not match any user in this service"
-      );
+      return setError('Username and password do not match any user in this service');
     }
 
-    return "";
+    return '';
   };
 
   const handleUserChange = (evt) => {
@@ -101,11 +93,7 @@ function Login(props) {
                   autoCorrect="off"
                   autoCapitalize="none"
                 />
-                <ErrorMessage
-                  isError={Boolean(error)}
-                  errorMessage={`Epic sadface: ${error}`}
-                  onClick={dismissError}
-                />
+                <ErrorMessage isError={Boolean(error)} errorMessage={`Epic sadface: ${error}`} onClick={dismissError} />
                 <SubmitButton
                   // `btn_action` has no style function
                   // but is there for backwards compatibility
