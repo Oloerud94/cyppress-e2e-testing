@@ -25,6 +25,7 @@
     "chai-sorted": "^0.2.0",
     "cypress": "^13.17.0",
     "cypress-map": "^1.41.0",
+    "cypress-mochawesome-reporter": "^4.0.2",
     "prettier": "^2.8.3",
     "prop-types": "^15.7.2"
   },
@@ -35,7 +36,7 @@
     "test": "cypress run",
     "cy:open": "cypress open --e2e",
     "dev": "start-test start-18 3000 \"npm run cy:open\"",
-    "ci":"start-test start-18 3000 test"
+    "ci": "start-test start-18 3000 test"
   },
   "browserslist": {
     "production": [
