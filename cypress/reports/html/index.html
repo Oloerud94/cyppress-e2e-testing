@@ -10725,12 +10725,10 @@
                               (d.showPoint &&
                                 p.pathElements.forEach(
                                   function (t) {
-                                    var s = l
-                                      .elem('line', { x1: t.x, y1: t.y, x2: t.x + 0.01, y2: t.y }, e.classNames.point)
-                                      .attr({
-                                        'ct:value': [t.data.value.x, t.data.value.y].filter(n.isNumeric).join(','),
-                                        'ct:meta': n.serialize(t.data.meta),
-                                      });
+                                    var s = l.elem('line', { x1: t.x, y1: t.y, x2: t.x + 0.01, y2: t.y }, e.classNames.point).attr({
+                                      'ct:value': [t.data.value.x, t.data.value.y].filter(n.isNumeric).join(','),
+                                      'ct:meta': n.serialize(t.data.meta),
+                                    });
                                     this.eventEmitter.emit('draw', {
                                       type: 'point',
                                       value: t.data.value,
