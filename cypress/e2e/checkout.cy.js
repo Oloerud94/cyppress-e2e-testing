@@ -4,7 +4,6 @@ import 'cypress-map';
 import { LoginPage } from '../pages/login.page';
 import { InventoryPage } from '../pages/inventory.page';
 import inventoryItems from '../fixtures/inventoryItemsFixture.json';
-import { CartPage } from '../pages/cart.page';
 import { CheckoutPage } from '../pages/checkout.page';
 
 const user = Cypress.env('users').standard;
@@ -21,7 +20,6 @@ describe('Checkout process', { viewportHeight: 1200 }, () => {
 
   it.only('hello old friend', () => {
     const item = inventoryItems[1];
-    const secondItem = inventoryItems[2];
     window.localStorage.setItem('cart-contents', JSON.stringify(ids));
 
     InventoryPage.shoppingCartButton().click();

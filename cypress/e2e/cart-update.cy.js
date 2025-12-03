@@ -4,7 +4,6 @@ import 'cypress-map';
 import { LoginPage } from '../pages/login.page';
 import { InventoryPage } from '../pages/inventory.page';
 import inventoryItems from '../fixtures/inventoryItemsFixture.json';
-import { CartPage } from '../pages/cart.page';
 
 const user = Cypress.env('users').standard;
 chai.use(require('chai-sorted'));
