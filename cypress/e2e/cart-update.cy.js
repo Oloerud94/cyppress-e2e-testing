@@ -24,15 +24,15 @@ describe('Delete items from Cart', { viewportHeight: 1200 }, () => {
 
     InventoryPage.getShoppingCartBadge().should('contain', ids.length);
 
-    InventoryPage.getItemDescriptionBy(item.name).find('#remove-sauce-labs-bolt-t-shirt').should('have.text', 'Remove').click();
+    InventoryPage.getItemDescriptionBy(item.name).find(InventoryPage.remove_item_locator).should('have.text', 'Remove').click();
 
     InventoryPage.getShoppingCartBadge().should('contain', ids.length - 1);
 
-    InventoryPage.getItemDescriptionBy(item.name).find('.btn.btn_primary.btn_small.btn_inventory').should('have.text', 'Add to cart');
+    InventoryPage.getItemDescriptionBy(item.name).find(InventoryPage.add_item_locator).should('have.text', 'Add to cart');
 
     //second item
     InventoryPage.getItemDescriptionBy(secondItem.name)
-      .find('.btn.btn_secondary.btn_small.btn_inventory')
+      .find(InventoryPage.add_second_item_locator)
       .should('have.text', 'Remove')
       .click();
 

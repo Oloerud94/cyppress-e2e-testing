@@ -14,6 +14,7 @@ export const LoginPage = {
   getError() {
     return cy.get('[data-test="error"]');
   },
+  
   loginWith(username, password) {
     LoginPage.getUsername().type(username);
     LoginPage.getPassword().type(password);
@@ -21,13 +22,6 @@ export const LoginPage = {
   },
 
   loginSession(username, password) {
-    // cy.session(`user ${username} login`, () => {
-    //   cy.log('**log in**')
-    //   cy.visit('/')
-    //   LoginPage.loginWith(username, password)
-    //   cy.location('pathname').should('equal','/inventory.html')
-    // },)
-
     cy.session(
       `user ${username} login`,
       () => {

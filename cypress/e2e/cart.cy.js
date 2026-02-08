@@ -21,17 +21,17 @@ describe('Add items to Cart', { viewportHeight: 1200 }, () => {
   it('Add item to shopping cart', () => {
     InventoryPage.getShoppingCartBadge().should('not.exist');
 
-    //first time
+    //firstItem
     InventoryPage.addItemByName(item.name);
 
     InventoryPage.getShoppingCartBadge().should('contain', 1);
 
-    InventoryPage.getItemDescriptionBy(item.name).find('#remove-sauce-labs-bolt-t-shirt').should('have.text', 'Remove');
+    InventoryPage.getItemDescriptionBy(item.name).find(InventoryPage.remove_item_locator).should('have.text', 'Remove');
 
     //secondItem
     InventoryPage.addItemByName(secondItem.name);
 
-    InventoryPage.getItemDescriptionBy(secondItem.name).find('.btn.btn_secondary.btn_small.btn_inventory').should('have.text', 'Remove');
+    InventoryPage.getItemDescriptionBy(secondItem.name).find(InventoryPage.add_item_locator).should('have.text', 'Remove');
 
     InventoryPage.getShoppingCartBadge().should('contain', 2);
   });
@@ -45,9 +45,9 @@ describe('Add items to Cart', { viewportHeight: 1200 }, () => {
     CartPage.getItems()
       .eq(0)
       .within(() => {
-        cy.contains('.inventory_item_desc', item.desc);
-        cy.contains('.inventory_item_name', item.name);
-        cy.contains('.inventory_item_price', item.price);
+        cy.contains(InventoryPage.inventory_item_description, item.desc);
+        cy.contains(InventoryPage.inventory_item_name, item.name);
+        cy.contains(InventoryPage.inventory_item_price, item.price);
         cy.get('.btn.btn_secondary.btn_small.cart_button');
         cy.contains('.cart_quantity', 1);
       });

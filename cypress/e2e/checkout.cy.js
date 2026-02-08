@@ -31,8 +31,6 @@ describe('Checkout process', { viewportHeight: 1200 }, () => {
     console.log('debug turbat', ids);
 
     inventoryItems.forEach((item, k) => {
-      console.log('debug turbat', item);
-      console.log('k', k);
       cy.get('.cart_item')
         .eq(k)
         .within(() => {
