@@ -28,9 +28,7 @@ describe('Add items to Cart', { viewportHeight: 1200 }, () => {
 
     //secondItem
     InventoryPage.addItemByName(secondItem.name);
-    InventoryPage.getItemDescriptionBy(secondItem.name)
-    .find(InventoryPage.remove_second_item_locator)
-    .should('have.text', 'Remove');
+    InventoryPage.getItemDescriptionBy(secondItem.name).find(InventoryPage.remove_second_item_locator).should('have.text', 'Remove');
     InventoryPage.getShoppingCartBadge().should('contain', 2);
   });
 

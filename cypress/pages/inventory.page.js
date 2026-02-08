@@ -1,6 +1,5 @@
 export const InventoryPage = {
-
-  inventory_item_description:'.inventory_item_desc',
+  inventory_item_description: '.inventory_item_desc',
   inventory_item_name: '.inventory_item_name',
   inventory_item_price: '.inventory_item_price',
   remove_item_locator: '#remove-sauce-labs-bolt-t-shirt',
