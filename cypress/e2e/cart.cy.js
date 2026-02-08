@@ -23,16 +23,14 @@ describe('Add items to Cart', { viewportHeight: 1200 }, () => {
 
     //firstItem
     InventoryPage.addItemByName(item.name);
-
     InventoryPage.getShoppingCartBadge().should('contain', 1);
-
     InventoryPage.getItemDescriptionBy(item.name).find(InventoryPage.remove_item_locator).should('have.text', 'Remove');
 
     //secondItem
     InventoryPage.addItemByName(secondItem.name);
-
-    InventoryPage.getItemDescriptionBy(secondItem.name).find(InventoryPage.add_item_locator).should('have.text', 'Remove');
-
+    InventoryPage.getItemDescriptionBy(secondItem.name)
+    .find(InventoryPage.remove_second_item_locator)
+    .should('have.text', 'Remove');
     InventoryPage.getShoppingCartBadge().should('contain', 2);
   });
 
