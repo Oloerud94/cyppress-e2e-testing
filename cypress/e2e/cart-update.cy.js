@@ -31,10 +31,7 @@ describe('Delete items from Cart', { viewportHeight: 1200 }, () => {
     InventoryPage.getItemDescriptionBy(item.name).find(InventoryPage.add_item_locator).should('have.text', 'Add to cart');
 
     //second item
-    InventoryPage.getItemDescriptionBy(secondItem.name)
-      .find(InventoryPage.add_second_item_locator)
-      .should('have.text', 'Remove')
-      .click();
+    InventoryPage.getItemDescriptionBy(secondItem.name).find(InventoryPage.add_second_item_locator).should('have.text', 'Remove').click();
 
     InventoryPage.getShoppingCartBadge().should('contain', ids.length - 2);
 

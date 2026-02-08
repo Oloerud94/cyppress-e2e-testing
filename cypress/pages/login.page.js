@@ -14,7 +14,7 @@ export const LoginPage = {
   getError() {
     return cy.get('[data-test="error"]');
   },
-  
+
   loginWith(username, password) {
     LoginPage.getUsername().type(username);
     LoginPage.getPassword().type(password);
