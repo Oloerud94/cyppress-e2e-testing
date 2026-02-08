@@ -31,7 +31,6 @@ It adds two items, and verifies them.
 
 <img width="1864" height="787" alt="image" src="https://github.com/user-attachments/assets/f2d26d7a-56fa-4c1f-af4f-91da6daef304" />
 
-
 To run the tests:
 
 Start the web application with:
@@ -48,7 +47,6 @@ Once Cypress opens, we can select cart.cy.js, and all the tests will run automat
 Here, we can see the test results and reports.
 <img width="1811" height="1136" alt="image" src="https://github.com/user-attachments/assets/29fae0f6-3651-46ff-9669-5fa74ecb8e38" />
 
-
 GitHub Actions Integration
 The tests are also integrated with GitHub Actions.
 You can check the report directly from the GitHub Actions workflow.
@@ -57,14 +55,4 @@ You can check the report directly from the GitHub Actions workflow.
 
 <img width="1412" height="258" alt="image" src="https://github.com/user-attachments/assets/e3507664-1e2c-440a-adc5-2648330bfd2d" />
 
-
 <img width="1499" height="858" alt="image" src="https://github.com/user-attachments/assets/46bb6f36-a8ac-4f31-a643-fdff9c721afc" />
-
-
-
-
-
-
-
-
-
