@@ -16,9 +16,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build docker iamges
+      - name: Build docker images
         run: docker compose build
 
       - name: Run containers and tests
         run: docker compose up --abort-on-container-exit
+
+      - name: Shutdown containers
+        if: always()
+        run: docker compose down
 
