@@ -16,4 +16,4 @@ services:
       dockerfile: docker/tests/Dockerfile
     depends_on:
       - web
-    command: npx cypress run --config baseUrl=http://192.168.1.132:3000
+    command: npx cypress run --config baseUrl=http://web:3000
