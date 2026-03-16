@@ -1,0 +1,24 @@
+name: Docker
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 9 * * *'
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build docker iamges
+        run: docker compose build
+
+      - name: Run containers and tests
+        run: docker compose up --abort-on-container-exit
+
