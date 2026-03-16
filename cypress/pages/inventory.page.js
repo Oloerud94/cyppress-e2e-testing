@@ -50,7 +50,6 @@ export const InventoryPage = {
     return cy.get('a.shopping_cart_link').click();
   },
 
-  
   addItemByName(itemName) {
     return InventoryPage.getItemDescriptionBy(itemName)
       .find('.btn.btn_primary.btn_small.btn_inventory')
